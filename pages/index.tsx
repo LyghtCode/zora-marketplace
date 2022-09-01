@@ -16,7 +16,7 @@ const Home: NextPage = () => {
       <Header />
       <main className="flex flex-col items-center">        
         <h1 className="text-white">
-          {'<<< ZORA >>>'}
+          <Image src="/1TakeLogo.jpg" alt='1Take' width={300} height={180}></Image>
         </h1>
       </main>
     </div>

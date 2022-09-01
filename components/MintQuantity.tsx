@@ -33,9 +33,9 @@ export default function MintQuantity({ colorScheme }) {
                
                
                <span className="block truncate">{mintQuantity.name}</span>
-               <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+               <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                   <SelectorIcon
-                     className="h-5 w-5"
+                     className="w-5 h-5"
                      aria-hidden="true" 
                   />
                </span>
@@ -47,9 +47,9 @@ export default function MintQuantity({ colorScheme }) {
                
                
                <span className="block truncate">{mintQuantity.name}</span>
-               <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+               <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                   <SelectorIcon
-                     className="h-5 w-5"
+                     className="w-5 h-5"
                      aria-hidden="true" 
                   />
                </span>
@@ -85,7 +85,7 @@ export default function MintQuantity({ colorScheme }) {
                               </span>
                               {selected ? (
                               <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-black">
-                                 <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                                 <CheckIcon className="w-5 h-5" aria-hidden="true" />
                               </span>
                               ) : null}
                            </>
@@ -116,7 +116,7 @@ export default function MintQuantity({ colorScheme }) {
                               </span>
                               {selected ? (
                               <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-black">
-                                 <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                                 <CheckIcon className="w-5 h-5" aria-hidden="true" />
                               </span>
                               ) : null}
                            </>
