@@ -17,9 +17,10 @@ import { Switch } from "@headlessui/react"
 // APIs
 const API_MAINNET = "https://api.zora.co/graphql"
 const API_RINKEBY = "https://indexer-dev-rinkeby.zora.co/v1/graphql"
+const API_GOERLI = "https://indexer-dev-goerli.zora.co/v1/graphql"
 
 const client = createClient({
-  url: API_MAINNET,
+  url: API_GOERLI,
 })
 
 console.log("client", client)
@@ -38,7 +39,7 @@ const Gallery: NextPage = () => {
 
   // read call to get current totalSupply
   const { data: totalSupplyData, isLoading, isSuccess, isFetching  } = useContractRead({
-    addressOrName: "0x230864bab819a49a3e3cd634eb266f9042d22e82", // Sofja Collection
+    addressOrName: "0x6d9fb8a25eed14e0378cd7e07f00ef4f409d9d7c", // Classick Collection
     contractInterface: editionsABI.abi,
     functionName: 'totalSupply',
     args: [],
@@ -63,7 +64,7 @@ const Gallery: NextPage = () => {
     ` 
       query ListCollections {
         tokens(
-          where: {collectionAddresses: "0x230864BaB819A49a3e3CD634EB266F9042d22e82"}
+          where: {collectionAddresses: "0x6d9fb8a25eed14e0378cd7e07f00ef4f409d9d7c"}
           pagination: {limit: 100}
         ) {
           nodes {
@@ -192,9 +193,9 @@ const Gallery: NextPage = () => {
   return (
     <div>
       <Header />
-      <div className=" min-h-screen bg-black flex flex-row flex-wrap justify-center">
+      <div className="flex flex-row flex-wrap justify-center min-h-screen bg-black ">
       <Switch.Group>
-        <div className=" mt-20 mb-5 w-full flex flex-row justify-center items-center">
+        <div className="flex flex-row items-center justify-center w-full mt-20 mb-5 ">
             <Switch.Label className="mr-4 font-bold text-white">FULL COLLECTION</Switch.Label>
             <Switch
               checked={enabled}

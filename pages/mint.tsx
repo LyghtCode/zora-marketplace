@@ -26,7 +26,7 @@ const Mint: NextPage = () => {
 
 
     const { data: totalSupplyData, isLoading, isSuccess, isFetching  } = useContractRead({
-        addressOrName: "0x230864bab819a49a3e3cd634eb266f9042d22e82", // Sofja Collection
+        addressOrName: "0x6d9fb8a25eed14e0378cd7e07f00ef4f409d9d7c", // Clasick Collection
         contractInterface: editionsABI.abi,
         functionName: 'totalSupply',
         args: [],
@@ -43,7 +43,7 @@ const Mint: NextPage = () => {
 
     // useContractWrite Mint Call
     const { data: mintData, isError: mintError, isLoading: mintLoading, isSuccess: mintSuccess, status: mintStatus, write: mintWrite  } = useContractWrite({
-        addressOrName: "0x230864bab819a49a3e3cd634eb266f9042d22e82", // Sofja Collection
+        addressOrName: "0x6d9fb8a25eed14e0378cd7e07f00ef4f409d9d7c", // Classick Collection
         contractInterface: editionsABI.abi,
         functionName: 'purchase',
         args: [
