@@ -20,7 +20,7 @@ const API_RINKEBY = "https://indexer-dev-rinkeby.zora.co/v1/graphql"
 const API_GOERLI = "https://indexer-dev-goerli.zora.co/v1/graphql"
 
 const client = createClient({
-  url: API_GOERLI,
+  url: API_MAINNET,
 })
 
 console.log("client", client)
@@ -39,7 +39,7 @@ const Gallery: NextPage = () => {
 
   // read call to get current totalSupply
   const { data: totalSupplyData, isLoading, isSuccess, isFetching  } = useContractRead({
-    addressOrName: "0x6d9fb8a25eed14e0378cd7e07f00ef4f409d9d7c", // Classick Collection
+    addressOrName: "0x9f313aac90e3d78dc3b407a57aec804cdb051428", // Classick Collection
     contractInterface: editionsABI.abi,
     functionName: 'totalSupply',
     args: [],
@@ -64,7 +64,7 @@ const Gallery: NextPage = () => {
     ` 
       query ListCollections {
         tokens(
-          where: {collectionAddresses: "0x6d9fb8a25eed14e0378cd7e07f00ef4f409d9d7c"}
+          where: {collectionAddresses: "0x9f313aac90e3d78dc3b407a57aec804cdb051428"}
           pagination: {limit: 100}
         ) {
           nodes {
@@ -216,7 +216,7 @@ const Gallery: NextPage = () => {
       {/* <div className="w-full flex flex-row justify-center text-[#202716] font-bold">
         <a 
             style={{ textDecoration: "none" }}
-            href="https://zora.co/collections/0x7e6663E45Ae5689b313e6498D22B041f4283c88A"
+            href="https://zora.co/collections/0x9f313aac90e3d78dc3b407a57aec804cdb051428"
         >
             <button className="text-center w-32 p-2 border-4 border-[#202716] bg-[#726e48] hover:bg-[#202716] hover:text-[#726e48] border-solid ">
               ZORA

@@ -119,9 +119,9 @@ interface ICollectionNFTs {
   salesVolume: any
 }
 
-const [collectionForm, setCollectionForm] = useState("0xCa21d4228cDCc68D4e23807E5e370C07577Dd152")
+const [collectionForm, setCollectionForm] = useState("0x9f313aac90e3d78dc3b407a57aec804cdb051428")
   const [collectionNFTs, setCollectionNFTs] = useState<ICollectionNFTs>({
-    "address": "0xca21d4228cdcc68d4e23807e5e370c07577dd152",
+    "address": "0x9f313aac90e3d78dc3b407a57aec804cdb051428",
     "description": "",
     "name": "Zorbs",
     "symbol": "ZORB",
@@ -175,7 +175,7 @@ const [collectionForm, setCollectionForm] = useState("0xCa21d4228cDCc68D4e23807E
   return (
     <div className='flex flex-col justify-center h-screen min-h-screen'>
       <Header />
-      <main className="w-full flex flex-row flex-wrap justify-center self-center items-center">        
+      <main className="flex flex-row flex-wrap items-center self-center justify-center w-full">        
       <UserNFTs userAddress={currentUserAddress} nfts={currentUserNFTs} collectionInfo={currentCollectionNFTs} setCollectionCB={setCollectionForm} />
       </main>
     </div>

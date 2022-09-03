@@ -50,17 +50,17 @@ const Protocol: NextPage = () => {
   }
 
   const [ asksNFT, setAsksNFT] = useState<nftInfo>({
-    "contractAddress": "0x7e6663E45Ae5689b313e6498D22B041f4283c88A",
+    "contractAddress": "0x9f313aac90e3d78dc3b407a57aec804cdb051428",
     "tokenId": "1"
   })
 
   const [ offersNFT, setOffersNFT] = useState<nftInfo>({
-    "contractAddress": "0x7e6663E45Ae5689b313e6498D22B041f4283c88A",
+    "contractAddress": "0x9f313aac90e3d78dc3b407a57aec804cdb051428",
     "tokenId": "2"
   })
 
   const [ auctionsNFT, setAuctionsNFT] = useState<nftInfo>({
-    "contractAddress": "0x7e6663E45Ae5689b313e6498D22B041f4283c88A",
+    "contractAddress": "0x9f313aac90e3d78dc3b407a57aec804cdb051428",
     "tokenId": "3"
   })
 
@@ -334,21 +334,21 @@ const Protocol: NextPage = () => {
       </Head>
 
       <Header />
-      <main className="border-l-2 border-r-2 border-t-2 border-white border-solid text-white grid  grid-rows-3 sm:grid-cols-3 h-fit">        
+      <main className="grid grid-rows-3 text-white border-t-2 border-l-2 border-r-2 border-white border-solid sm:grid-cols-3 h-fit">        
         
         {/* ASKS MODULE */}
         {/* ASKS MODULE */}
         {/* ASKS MODULE */}
 
-        <div className='mt-24 sm:mt-10 flex flex-row flex-wrap content-start'>
-          <div className='h-fit content-start flex flex-row flex-wrap w-full'>
-            <div className="text-2xl h-fit w-full flex flex-row justify-center">            
+        <div className='flex flex-row flex-wrap content-start mt-24 sm:mt-10'>
+          <div className='flex flex-row flex-wrap content-start w-full h-fit'>
+            <div className="flex flex-row justify-center w-full text-2xl h-fit">            
               ASKS MODULE
             </div>
-            <div className=" justify-center border-2 border-white border-solid flex flex-row h-fit w-full">
+            <div className="flex flex-row justify-center w-full border-2 border-white border-solid h-fit">
               LIST AND BUY NFTs FOR A SPECIFIC PRICE
             </div>
-            <div className="grid grid-cols-2 border-2 boreder-yellow-500 border-solid w-full" >
+            <div className="grid w-full grid-cols-2 border-2 border-solid boreder-yellow-500" >
               <a
                 href="https://github.com/0xTranqui/zora-starter-kit"
                 className=" hover:cursor-pointer hover:text-[#f53bc3] text-center"
@@ -356,7 +356,7 @@ const Protocol: NextPage = () => {
                 REPO
               </a>
               <a 
-                href="https://etherscan.io/address/0x6170B3C3A54C3d8c854934cBC314eD479b2B29A3"
+                href="https://etherscan.io/address/0x9f313aac90e3d78dc3b407a57aec804cdb051428"
                 className="hover:text-[#f53bc3] text-center"
               >
               ETHERSCAN
@@ -365,7 +365,7 @@ const Protocol: NextPage = () => {
           </div>
 
           {/* NFT RENDERING + CONTRACT INPUTS */}
-          <div className="mt-2  w-full h-fit flex flex-row flex-wrap justify-center "> 
+          <div className="flex flex-row flex-wrap justify-center w-full mt-2 h-fit "> 
             <MediaConfiguration
               networkId="1"                        
               strategy={zdkStrategyMainnet}
@@ -393,8 +393,8 @@ const Protocol: NextPage = () => {
                 showPerpetual={false}
               />
             </MediaConfiguration> 
-            <div className="w-full flex flex-row flex-wrap justify-center">
-              <div className="justify-center flex flex-row w-full">
+            <div className="flex flex-row flex-wrap justify-center w-full">
+              <div className="flex flex-row justify-center w-full">
                 <div className="align-center">
                   CONTRACT ADDRESS
                 </div>
@@ -417,8 +417,8 @@ const Protocol: NextPage = () => {
                 >
                 </input>
               </div>
-              <div className="justify-center flex flex-row w-full">
-                <div className=" mt-1 self-center">
+              <div className="flex flex-row justify-center w-full">
+                <div className="self-center mt-1 ">
                   TOKEN ID
                 </div>
                 <input
@@ -441,35 +441,35 @@ const Protocol: NextPage = () => {
                 </input>
               </div>
               
-              <div className="flex flex-row flex-wrap w-full justify-center">
+              <div className="flex flex-row flex-wrap justify-center w-full">
                 {zmmAsksApprovalCheck() === false ? (
-                <div className="mt-2 flex w-full justify-center">
+                <div className="flex justify-center w-full mt-2">
                   <button
                     onClick={() => asksZMMWrite()}
-                    className="w-fit hover:bg-white hover:text-black border-2 border-white border-solid p-1 mt-1"
+                    className="p-1 mt-1 border-2 border-white border-solid w-fit hover:bg-white hover:text-black"
                   >
                     APPROVE ASKS MODULE
                   </button>
                 </div>
                 ) : (
-                <div className="mt-2 flex w-full justify-center">
-                  <button disabled={true}  className="w-fit border-2 border-slate-600 text-slate-400 border-solid p-1 mt-1">
+                <div className="flex justify-center w-full mt-2">
+                  <button disabled={true}  className="p-1 mt-1 border-2 border-solid w-fit border-slate-600 text-slate-400">
                     ASK MODULE APPROVED ✅
                   </button>
                 </div>                
                 )}
                 {transferHelperDataBoolAsks() === false ? (
-                <div className="mt-2 flex w-full justify-center">
+                <div className="flex justify-center w-full mt-2">
                   <button 
                     onClick={() => asksTransferHelperWrite()}
-                    className="w-fit hover:bg-white hover:text-black border-2 border-white border-solid p-1 mt-1"
+                    className="p-1 mt-1 border-2 border-white border-solid w-fit hover:bg-white hover:text-black"
                   >
                     APPROVE TRANSFER HELPER
                   </button>
                 </div>
                 ) : (
-                <div className="mt-2 flex w-full justify-center">
-                  <button disabled={true}  className="w-fit border-2 border-slate-600 text-slate-400 border-solid p-1 mt-1">
+                <div className="flex justify-center w-full mt-2">
+                  <button disabled={true}  className="p-1 mt-1 border-2 border-solid w-fit border-slate-600 text-slate-400">
                     TRANSFER HELPER APPROVED ✅
                   </button>
                 </div>  
@@ -478,18 +478,18 @@ const Protocol: NextPage = () => {
 
             </div>                   
           </div>
-          <div className="mt-8 flex flex-row flex-wrap w-full ">
+          <div className="flex flex-row flex-wrap w-full mt-8 ">
             <div className="w-full">
-              <div className="ml-2 mb-2 text-xl">
+              <div className="mb-2 ml-2 text-xl">
                 ASK MODULE READS
               </div>
               <AskRead_disclosure nft={asksNFT} />
               {/* <AskForNFT_READ nft={asksNFT} /> */}
             </div>
           </div>
-          <div className="mt-5 flex flex-row flex-wrap w-full ">
+          <div className="flex flex-row flex-wrap w-full mt-5 ">
             <div className="flex flex-row flex-wrap w-full">
-              <div className="ml-2 mb-2 text-xl">
+              <div className="mb-2 ml-2 text-xl">
                 ASK MODULE WRITES
               </div>
               <AskWrite_disclosure nft={asksNFT} />
@@ -502,14 +502,14 @@ const Protocol: NextPage = () => {
         {/* OFFERS MODULE */}
 
         <div className='sm:mt-10 '>
-          <div className='h-fit content-start flex flex-row flex-wrap w-full'>
-            <div className="text-2xl h-fit w-full flex flex-row justify-center">            
+          <div className='flex flex-row flex-wrap content-start w-full h-fit'>
+            <div className="flex flex-row justify-center w-full text-2xl h-fit">            
               OFFERS MODULE
             </div>
-            <div className=" justify-center border-2 border-white border-solid flex flex-row h-fit w-full">
+            <div className="flex flex-row justify-center w-full border-2 border-white border-solid h-fit">
               MAKE AND RECIEVE OFFERS ON NFTs
             </div>
-            <div className="grid grid-cols-2 border-2 boreder-yellow-500 border-solid w-full" >
+            <div className="grid w-full grid-cols-2 border-2 border-solid boreder-yellow-500" >
             <a
                 href="https://github.com/0xTranqui/zora-starter-kit"
                 className=" hover:cursor-pointer hover:text-[#f53bc3] text-center"
@@ -517,7 +517,7 @@ const Protocol: NextPage = () => {
                 REPO
               </a>
               <a 
-                href="https://etherscan.io/address/0x76744367ae5a056381868f716bdf0b13ae1aeaa3"
+                href="https://etherscan.io/address/0x9f313aac90e3d78dc3b407a57aec804cdb051428"
                 className="hover:text-[#f53bc3] text-center"
               >
               ETHERSCAN
@@ -526,7 +526,7 @@ const Protocol: NextPage = () => {
           </div>
 
           {/* NFT RENDERING + CONTRACT INPUTS */}
-          <div className="mt-2  border-l-2 border-r-2 border-b-2 border-solid border-white w-full h-fit flex flex-row flex-wrap justify-center "> 
+          <div className="flex flex-row flex-wrap justify-center w-full mt-2 border-b-2 border-l-2 border-r-2 border-white border-solid h-fit "> 
             <MediaConfiguration
               networkId="1"                        
               strategy={zdkStrategyMainnet}
@@ -554,8 +554,8 @@ const Protocol: NextPage = () => {
                 showPerpetual={false}
               />
             </MediaConfiguration> 
-            <div className="w-full flex flex-row flex-wrap justify-center">
-            <div className="justify-center flex flex-row w-full">
+            <div className="flex flex-row flex-wrap justify-center w-full">
+            <div className="flex flex-row justify-center w-full">
                 <div className="align-center">
                   CONTRACT ADDRESS
                 </div>
@@ -578,8 +578,8 @@ const Protocol: NextPage = () => {
                 >
                 </input>
               </div>
-              <div className="justify-center flex flex-row w-full">
-                <div className=" mt-1 self-center">
+              <div className="flex flex-row justify-center w-full">
+                <div className="self-center mt-1 ">
                   TOKEN ID
                 </div>
                 <input
@@ -601,52 +601,52 @@ const Protocol: NextPage = () => {
                 >
                 </input>
               </div>
-              <div className="flex flex-row flex-wrap w-full justify-center">
+              <div className="flex flex-row flex-wrap justify-center w-full">
                 {zmmOffersApprovalCheck() === false ? (
-                <div className="mt-2 flex w-full justify-center">
+                <div className="flex justify-center w-full mt-2">
                   <button
                     onClick={() => offersZMMWrite()}
-                    className="w-fit hover:bg-white hover:text-black border-2 border-white border-solid p-1 mt-1"
+                    className="p-1 mt-1 border-2 border-white border-solid w-fit hover:bg-white hover:text-black"
                   >
                     APPROVE OFFERS MODULE
                   </button>
                 </div>
                 ) : (
-                <div className="mt-2 flex w-full justify-center">
-                  <button disabled={true}  className="w-fit border-2 border-slate-600 text-slate-400 border-solid p-1 mt-1">
+                <div className="flex justify-center w-full mt-2">
+                  <button disabled={true}  className="p-1 mt-1 border-2 border-solid w-fit border-slate-600 text-slate-400">
                     OFFERS MODULE APPROVED ✅
                   </button>
                 </div>                
                 )}
                 {transferHelperDataBoolOffers() === false ? (
-                <div className="mt-2 flex w-full justify-center">
+                <div className="flex justify-center w-full mt-2">
                   <button
                     onClick={() => offersTransferHelperWrite()}
-                    className="w-fit hover:bg-white hover:text-black border-2 border-white border-solid p-1 mt-1"
+                    className="p-1 mt-1 border-2 border-white border-solid w-fit hover:bg-white hover:text-black"
                   >
                     APPROVE TRANSFER HELPER
                   </button>
                 </div>
                 ) : (
-                <div className="mt-2 flex w-full justify-center">
-                  <button disabled={true}  className="w-fit border-2 border-slate-600 text-slate-400 border-solid p-1 mt-1">
+                <div className="flex justify-center w-full mt-2">
+                  <button disabled={true}  className="p-1 mt-1 border-2 border-solid w-fit border-slate-600 text-slate-400">
                     TRANSFER HELPER APPROVED ✅
                   </button>
                 </div>  
                 )}
               </div>
-              <div className="mt-8 flex flex-row flex-wrap w-full ">
+              <div className="flex flex-row flex-wrap w-full mt-8 ">
                 <div className="w-full">
-                  <div className="ml-2 mb-2 text-xl">
+                  <div className="mb-2 ml-2 text-xl">
                     OFFERS MODULE READS
                   </div>
                   <OffersRead_disclosure nft={offersNFT} />
                   {/* <AskForNFT_READ nft={asksNFT} /> */}
                 </div>
               </div>
-              <div className="mt-5 flex flex-row flex-wrap w-full ">
+              <div className="flex flex-row flex-wrap w-full mt-5 ">
                 <div className="flex flex-row flex-wrap w-full">
-                  <div className="ml-2 mb-2 text-xl">
+                  <div className="mb-2 ml-2 text-xl">
                     OFFERS MODULE WRITES
                   </div>
                   <OffersWrite_disclosure nft={offersNFT} />
@@ -662,14 +662,14 @@ const Protocol: NextPage = () => {
         {/* AUCTION MODULE */}
 
         <div className='sm:mt-10 '>
-          <div className='h-fit content-start flex flex-row flex-wrap w-full'>
-            <div className="text-2xl h-fit w-full flex flex-row justify-center">            
+          <div className='flex flex-row flex-wrap content-start w-full h-fit'>
+            <div className="flex flex-row justify-center w-full text-2xl h-fit">            
               AUCTIONS MODULE
             </div>
-            <div className=" justify-center border-2 border-white border-solid flex flex-row h-fit w-full">
+            <div className="flex flex-row justify-center w-full border-2 border-white border-solid h-fit">
               RUN AND BID ON AUCTIONS FOR NFTs
             </div>
-            <div className="grid grid-cols-2 border-2 boreder-yellow-500 border-solid w-full" >
+            <div className="grid w-full grid-cols-2 border-2 border-solid boreder-yellow-500" >
               <a
                 href="https://github.com/0xTranqui/zora-starter-kit"
                 className=" hover:cursor-pointer hover:text-[#f53bc3] text-center"
@@ -686,7 +686,7 @@ const Protocol: NextPage = () => {
           </div>
 
           {/* NFT RENDERING + CONTRACT INPUTS */}              
-          <div className="mt-2 w-full h-fit flex flex-row flex-wrap justify-center "> 
+          <div className="flex flex-row flex-wrap justify-center w-full mt-2 h-fit "> 
             <MediaConfiguration
               networkId="1"                        
               strategy={zdkStrategyMainnet}
@@ -714,8 +714,8 @@ const Protocol: NextPage = () => {
                 showPerpetual={false}
               />
             </MediaConfiguration> 
-            <div className="w-full flex flex-row flex-wrap justify-center">
-              <div className="justify-center flex flex-row w-full">
+            <div className="flex flex-row flex-wrap justify-center w-full">
+              <div className="flex flex-row justify-center w-full">
                 <div className="align-center">
                   CONTRACT ADDRESS
                 </div>
@@ -738,8 +738,8 @@ const Protocol: NextPage = () => {
                 >
                 </input>
               </div>
-              <div className="justify-center flex flex-row w-full">
-                <div className=" mt-1 self-center">
+              <div className="flex flex-row justify-center w-full">
+                <div className="self-center mt-1 ">
                   TOKEN ID
                 </div>
                 <input
@@ -761,35 +761,35 @@ const Protocol: NextPage = () => {
                 >
                 </input>
               </div>
-              <div className="flex flex-row flex-wrap w-full justify-center">
+              <div className="flex flex-row flex-wrap justify-center w-full">
                 {zmmAuctionFindersEthApprovalCheck() === false ? (
-                <div className="mt-2 flex w-full justify-center">
+                <div className="flex justify-center w-full mt-2">
                   <button
                     onClick={() => auctionsZMMWrite()}
-                    className="w-fit hover:bg-white hover:text-black border-2 border-white border-solid p-1 mt-1"
+                    className="p-1 mt-1 border-2 border-white border-solid w-fit hover:bg-white hover:text-black"
                   >
                     APPROVE AUCTION MODULE
                   </button>
                 </div>
                 ) : (
-                <div className="mt-2 flex w-full justify-center">
-                  <button disabled={true}  className="w-fit border-2 border-slate-600 text-slate-400 border-solid p-1 mt-1">
+                <div className="flex justify-center w-full mt-2">
+                  <button disabled={true}  className="p-1 mt-1 border-2 border-solid w-fit border-slate-600 text-slate-400">
                     AUCTION MODULE APPROVED ✅
                   </button>
                 </div>                
                 )}
                 {transferHelperDataBoolAuctions() === false ? (
-                <div className="mt-2 flex w-full justify-center">
+                <div className="flex justify-center w-full mt-2">
                   <button 
                     onClick={() => auctionsTransferHelperWrite()}
-                    className="w-fit hover:bg-white hover:text-black border-2 border-white border-solid p-1 mt-1"
+                    className="p-1 mt-1 border-2 border-white border-solid w-fit hover:bg-white hover:text-black"
                   >
                     APPROVE TRANSFER HELPER
                   </button>
                 </div>
                 ) : (
-                <div className="mt-2 flex w-full justify-center">
-                  <button disabled={true}  className="w-fit border-2 border-slate-600 text-slate-400 border-solid p-1 mt-1">
+                <div className="flex justify-center w-full mt-2">
+                  <button disabled={true}  className="p-1 mt-1 border-2 border-solid w-fit border-slate-600 text-slate-400">
                     TRANSFER HELPER APPROVED ✅
                   </button>
                 </div>  
@@ -797,17 +797,17 @@ const Protocol: NextPage = () => {
               </div>
             </div>                   
           </div>              
-          <div className="mt-8 flex flex-row flex-wrap w-full ">
+          <div className="flex flex-row flex-wrap w-full mt-8 ">
             <div className="w-full">
-              <div className="ml-2 mb-2 text-xl">
+              <div className="mb-2 ml-2 text-xl">
                 AUCTION MODULE READS
               </div>
               <AuctionRead_disclosure nft={auctionsNFT} />
             </div>
           </div>
-          <div className="mt-5 flex flex-row flex-wrap w-full ">
+          <div className="flex flex-row flex-wrap w-full mt-5 ">
             <div className="flex flex-row flex-wrap w-full">
-              <div className="ml-2 mb-2 text-xl">
+              <div className="mb-2 ml-2 text-xl">
                 AUCTION MODULE WRITES
               </div>
               <AuctionWrite_disclosure nft={auctionsNFT} />

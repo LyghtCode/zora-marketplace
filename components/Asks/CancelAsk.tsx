@@ -45,12 +45,12 @@ export const CancelAsk = (nft) => {
     }
     
     return (
-        <div className=" flex flex-row flex-wrap w-fit space-y-1 text-white">
-            <div className="flex flex-row flex-wrap w-full justify-center">
+        <div className="flex flex-row flex-wrap space-y-1 text-white  w-fit">
+            <div className="flex flex-row flex-wrap justify-center w-full">
                 <div>
                     {"Contract Address: " + shortenedAddress(nft.nft.nft.token.collectionAddress)}
                 </div>                    
-                <div className="ml-5 flex flex-row flex-wrap ">                    
+                <div className="flex flex-row flex-wrap ml-5 ">                    
                     {"Token Id: " + nft.nft.nft.token.tokenId}
                 </div>                                       
             </div>                                                                     
